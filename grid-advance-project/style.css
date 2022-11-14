@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: black;
+    line-height: 22px;
+}
+
+.container{
+    max-width: 100%;
+    height: 100vh;
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    grid-template-rows: 1fr 4fr 1.2fr 1.2fr;
+}
+
+.logo{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: rgb(149, 212, 197);
+    display: flex;
+    align-items: center;
+}
+
+.logo a{
+    color: #0a7b34;
+    font-size: 24px;
+    text-decoration: none;
+    padding-left:50px ;
+}
+
+
+.main{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding:0 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main h1{
+    font-size: 36px;
+    line-height: 49px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    max-width: 290px;
+}
+
+.quotes{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: rgb(141, 202, 157);
+    display: flex;
+    align-items: center;
+    padding: 0 125px;
+}
+
+.quotes h2{
+    line-height: 33px;
+    font-size: 24px;
+
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn a{
+color: white;
+font-size: 24px;
+font-weight: 700;
+text-decoration: none;
+}
+.btn1{
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: rgb(16, 60, 31);
+}
+
+.btn2{
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color: rgb(48, 197, 133);
+}
+
+header{
+    grid-area:1/3/2/4 ;
+   /* grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;*/
+    background-color: rgb(243, 243, 243);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right:30px ;
+}
+
+header ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header ul li{
+    padding: 30px 15px;
+    font-weight: 700;
+    color: black;
+}
+
+.img-box{
+    grid-row: 2/5;
+    grid-column: 3/4;
+    background-color: rgb(163, 99, 99);
+    overflow: hidden;
+    background: url(./nature.webp);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width:767px){
+
+    .img-box{
+        display: none;
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+        grid-template-areas: "logio  logo"
+                            "header  header"
+                            "main    main"
+                            "quotes  quotes"
+                            "btn1    btn2";
+    grid-template-rows: 100px 50px;                        
+    }
+
+    .logo{
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 5;
+        background-color: rgb(149, 212, 197);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo a{
+        padding: 0;
+        color: black;
+    }
+
+    header{
+       /* grid-area:1/3/2/4 ;*/
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        background-color: rgb(243, 243, 243);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    
+    header ul li{
+        margin-right: 20px;
+        padding: 20px 15px;
+        font-weight: 700;
+        color: black;
+    }
+
+    .main{
+        grid-row-start: 3;
+        grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        padding:30px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: url(./images\ \(2\).jfif);
+        background-size: cover;
+    }
+
+    .main h1{
+        font-size: 26px;
+        line-height: 49px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        max-width: 290px;
+        color: rgb(181, 222, 0);
+    }
+    .main p{
+        color: white;
+    }
+
+    .quotes{
+        grid-row-start: 4;
+        grid-row-end: 5;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        background-color: rgb(141, 202, 157);
+        display: flex;
+        align-items: center;
+        padding: 20px 20px;
+    }
+
+    .quotes h2{
+        line-height: 33px;
+        font-size: 19px;
+    
+    }
+    .btn1{
+        grid-row-start: 5;
+        grid-row-end: 6;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        background-color: rgb(16, 60, 31);
+        padding: 30px 0;
+    }
+
+    .btn a{
+        font-size: 18px;
+    }
+    
+    .btn2{
+        grid-row-start: 5;
+        grid-row-end: 6;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        background-color: rgb(48, 197, 133);
+    }
+
+
+}
